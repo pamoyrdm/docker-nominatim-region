@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-ARG REGION=europe/belarus
+ARG REGION=south-america/chile
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
@@ -71,7 +71,7 @@ RUN sudo curl http://download.geofabrik.de/${REGION}-latest.osm.pbf -o /latest.o
     sudo chown -R postgres:postgres /var/lib/postgresql/12/main && \
     sudo rm /latest.osm.pbf
 
-EXPOSE 80
+EXPOSE 7500
 EXPOSE 5432
 
 COPY start.sh /app/start.sh
